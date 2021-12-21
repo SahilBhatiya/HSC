@@ -10,7 +10,8 @@ namespace HSC.Data
             : base(options)
         {
         }
-        DbSet<Worker> Workers { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
 
     }
 }

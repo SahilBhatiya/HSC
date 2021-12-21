@@ -1,0 +1,38 @@
+﻿@model HSC.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Details - " + Model.Number;
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h1 class="Page-Heading">@ViewData["Title"]</h1>
+
+<div>
+    <a asp-action="Index" class="back-btn"><i class='bx bx-arrow-back'></i> Back to List</a>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.kmPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kmPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.owner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.owner)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="edit-btn">Edit</a>
+</div>

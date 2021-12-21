@@ -1,0 +1,147 @@
+:root {
+    --blue-color: 66,133,244;
+    --yellow-color: 244,180,0;
+    --red-color: 219, 68, 55;
+}
+
+.custom-btn-1 {
+    padding: 14px 40px;
+    text-decoration: none !important;
+    margin-bottom: 16px !important;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: rgba(var(--blue-color), .7);
+    color: white;
+    font-weight: 600;
+}
+
+    .custom-btn-1:hover {
+        color: white;
+        background-color: rgba(var(--blue-color), 1);
+    }
+
+.back-btn {
+    text-decoration: none !important;
+    margin-bottom: 20px !important;
+    display: inline-block;
+}
+
+    .back-btn i {
+        margin-left: 10px;
+        margin-right: 10px;
+        transition: all .5s ease-in-out;
+    }
+
+    .back-btn:hover i {
+        margin-left: 4px;
+        margin-right: 16px;
+    }
+
+
+input[type="submit"] {
+    margin-top: 16px;
+    border-radius: 12px;
+    transition: all .5s ease-in-out;
+    padding: 10px 40px;
+    text-align: center;
+}
+
+    input[type="submit"]:hover {
+        box-shadow: 0 0 40px 0 rgba(var(--blue-color), .5);
+    }
+
+.form-group {
+    margin-block: 16px;
+}
+
+    .form-group .control-label {
+        margin-bottom: 2px;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    .form-group .form-control {
+        border-radius: 12px;
+        padding: 10px 8px;
+        border-color: rgb(var(--blue-color));
+    }
+
+
+.edit-btn {
+    padding: 10px 40px;
+    text-decoration: none !important;
+    margin-bottom: 16px !important;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: rgba(var(--yellow-color), .7);
+    color: white;
+    font-weight: 600;
+}
+
+    .edit-btn:hover {
+        color: white;
+        background-color: rgba(var(--yellow-color), 1);
+        box-shadow: 0 0 20px 0 rgba(var(--yellow-color), .3);
+    }
+
+
+    th{
+        border: 0;
+        padding: 8px !important;
+    }
+
+thead {
+    background-color: rgba(var(--blue-color), .6) !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+    color: white;
+}
+
+table{
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow:hidden;
+}
+
+.table > :not(caption) > * > * {
+    border: 0;
+    padding-block: 10px !important;
+}
+
+.table-edit-btn {
+    color: rgba(var(--yellow-color));
+    font-size: 20px;
+    margin-inline: 8px;
+    transition: all .3s ease;
+}
+
+    .table-edit-btn:hover {
+        color: rgba(var(--yellow-color));
+    }
+
+.table-detail-btn {
+    color: rgba(var(--blue-color));
+    font-size: 20px;
+    margin-inline: 8px;
+    transition: all .3s ease;
+}
+
+    .table-detail-btn:hover {
+        color: rgba(var(--blue-color));
+    }
+
+.table-delete-btn {
+    color: rgba(var(--red-color));
+    font-size: 20px;
+    margin-inline: 8px;
+    transition: all .3s ease;
+}
+
+    .table-delete-btn:hover {
+        color: rgba(var(--red-color));
+    }
+
+tbody tr:hover {
+    background: white !important;
+    font-weight: 600;
+}

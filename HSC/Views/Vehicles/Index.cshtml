@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HSC.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "All Vehicles";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h1 class="Page-Heading">@ViewData["Title"]</h1>
+
+    <a asp-action="Create" class="custom-btn-1">Add New Vehicle</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kmPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.owner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kmPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="table-edit-btn"><i class='bx bxs-pencil' ></i></a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="table-detail-btn"><i class='bx bxs-detail'></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="table-delete-btn"><i class='bx bxs-box'></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
