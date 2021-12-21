@@ -469,3 +469,120 @@ body {
         right: 16px !important;
     }
 }
+
+
+
+.action {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 100;
+}
+
+    .action .profile {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 18px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+        .action .profile img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .action .menu {
+        position: absolute;
+        top: 80px;
+        right: -10px;
+        padding: 10px 10px 0px 10px;
+        background: #fff !important;
+        width: 200px;
+        box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 18px;
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 100;
+        box-shadow: 0 0 50px rgba(var(--primary-color),.1), 0 0 0 2px rgba(var(--primary-color),.1);
+    }
+
+    .action .menu ul{
+        padding-left: 0 !important;
+    }
+
+        .action .menu.active {
+            top: 70px;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .action .menu::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            right: 28px;
+            width: 20px;
+            height: 20px;
+            background: #ffffff00;
+            transform: rotate(45deg);
+        }
+
+        .action .menu h3 {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            padding: 16px 0;
+            font-weight: 600;
+            color: var(--text-color) !important;
+            line-height: 1.5em;
+        }
+
+            .action .menu h3 span {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text-color) !important;
+                opacity: .5;
+            }
+
+        .action .menu ul li {
+            list-style: none;
+            margin-block: 6px;
+            display: flex;
+            align-items: center;
+            border-radius: 12px;
+        }
+
+            .action .menu ul li i {
+                max-width: 20px;
+                margin-right: 10px;
+                margin-left: 10px;
+                opacity: 0.5;
+                transition: 0.5s;
+                font-weight: 500;
+            }
+
+            .action .menu ul li:hover i {
+                opacity: 1;
+            }
+
+            .action .menu ul li a {
+                padding: 10px 4px;
+                width: 100%;
+                display: inline-block;
+                text-decoration: none;
+                color: #555;
+                font-weight: 600;
+                transition: 0.5s;
+
+            }
+
+            .action .menu ul li:hover{
+                background-color: rgba(var(--primary-color), .1);
+            }

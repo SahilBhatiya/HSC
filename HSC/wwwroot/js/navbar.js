@@ -11,3 +11,10 @@ sidebarBtn.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     sidebarBtn.classList.toggle("opened");
 });
+
+
+
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+}
