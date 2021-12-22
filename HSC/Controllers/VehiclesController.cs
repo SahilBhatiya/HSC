@@ -35,7 +35,7 @@ namespace HSC.Controllers
             }
 
             var vehicle = await _context.Vehicles
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id.Equals(id));
             if (vehicle == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace HSC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Number,kmPrice,owner")] Vehicle vehicle)
+        public async Task<IActionResult> Create([Bind("Number,kmPrice,owner")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace HSC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,Number,kmPrice,owner")] Vehicle vehicle)
         {
-            if (id != vehicle.Id)
+            if (!vehicle.Id.Equals(id))
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace HSC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VehicleExists(vehicle.Id))
+                    if (!VehicleExists(vehicle.Id.ToString()))
                     {
                         return NotFound();
                     }
@@ -126,7 +126,7 @@ namespace HSC.Controllers
             }
 
             var vehicle = await _context.Vehicles
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id.Equals(id));
             if (vehicle == null)
             {
                 return NotFound();
@@ -148,7 +148,7 @@ namespace HSC.Controllers
 
         private bool VehicleExists(string id)
         {
-            return _context.Vehicles.Any(e => e.Id == id);
+            return _context.Vehicles.Any(e => e.Id.Equals(id));
         }
     }
 }
